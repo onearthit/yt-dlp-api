@@ -29,7 +29,7 @@ async def extract_video_info(video_url: str = ''):
             for format_lists in info['formats']:
                 if format_lists.get('acodec') is None:
                     continue
-                if format_lists['acodec'] != 'none' and format_lists['vcodec'] != 'none' and format_lists['resolution'] != 'audio only' and format_lists['ext'] == 'mp4':
+                if format_lists['ext'] == 'm4a':
                     response['links'].append({
                         'format': format_lists['ext'],
                         'itag': format_lists['resolution'] + '(' + str(format_lists['aspect_ratio']) + ')',
